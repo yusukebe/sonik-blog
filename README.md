@@ -6,10 +6,11 @@ Creating Blog with [Sonik](https://github.com/yusukebe/sonik).
 
 * Sonik (Hono + Vite based framework)
 * Preact
+* Zod
+* Tailwind CSS
 * Cloudflare Pages
 * Cloudflare D1
 * [cf-bindings-proxy](https://github.com/james-elicx/cf-bindings-proxy)
-* Tailwind CSS
 
 ## Usage
 
