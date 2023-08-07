@@ -12,6 +12,17 @@ Creating Blog with [Sonik](https://github.com/yusukebe/sonik).
 * Cloudflare D1
 * [cf-bindings-proxy](https://github.com/james-elicx/cf-bindings-proxy)
 
+## Demo
+
+SSR with Island:
+
+https://github.com/yusukebe/sonik-blog/assets/10682/47ae2757-3050-4b61-864f-158257d75806
+
+HMR with Cloudflare Bindings:
+
+https://github.com/yusukebe/sonik-blog/assets/10682/73fd1303-b26a-45b9-8ea8-bc8905ccfb0f
+
+
 ## Usage
 
 Setup D1:
