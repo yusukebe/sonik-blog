@@ -28,11 +28,18 @@ https://github.com/yusukebe/sonik-blog/assets/10682/73fd1303-b26a-45b9-8ea8-bc89
 Setup D1:
 
 ```
-wrangler d1 create sonik-blog --experimental-backend
+yarn wrangler d1 create sonik-blog --experimental-backend
 yarn wrangler d1 execute sonik-blog --local --file=./blog.sql
 ```
 
-Proxy for Cloudflare Bindings:
+Edit `wrangler.toml`:
+
+```
+cp wrangler.sample.toml wrangler.toml
+code wrangler.toml
+```
+
+Run proxy for Cloudflare Bindings:
 
 ```
 yarn proxy
@@ -56,10 +63,9 @@ Deploy:
 yarn deploy
 ```
 
-
 ## Author
 
-Yusuke Wada
+Yusuke Wada <https://github.com/yusukebe>
 
 ## License
 
