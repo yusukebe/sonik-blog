@@ -32,12 +32,15 @@ export default function ContentForm({ initialValue = '' }: Props) {
         </label>
       </div>
       {preview ? (
-        <div
-          id="contents"
-          dangerouslySetInnerHTML={{
-            __html: parseMarkdown(value)
-          }}
-        />
+        <>
+          <div
+            id="contents"
+            dangerouslySetInnerHTML={{
+              __html: parseMarkdown(value)
+            }}
+          />
+          <input type="hidden" name="content" value={value} />
+        </>
       ) : (
         <textarea
           id="content"
