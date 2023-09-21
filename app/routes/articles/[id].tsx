@@ -7,7 +7,8 @@ dayjs.extend(relativeTime)
 
 export default async function ArticlePermalink(c: Context) {
   const id = c.req.param('id')
-  const article = await findArticleById(c.get('DB'), id)
+  const article = await findArticleById(c.env.DB, id)
+
   if (!article) {
     return c.notFound()
   }

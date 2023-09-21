@@ -10,7 +10,6 @@ Creating Blog with [Sonik](https://github.com/yusukebe/sonik).
 * Tailwind CSS
 * Cloudflare Pages
 * Cloudflare D1
-* [cf-bindings-proxy](https://github.com/james-elicx/cf-bindings-proxy)
 
 ## Demo
 
@@ -25,41 +24,42 @@ https://github.com/yusukebe/sonik-blog/assets/10682/73fd1303-b26a-45b9-8ea8-bc89
 
 ## Usage
 
+Setup your local database:
+
+```txt
+mkdir -p .mf/d1/DB/
+sqlite3 .mf/d1/DB/db.sqlite < blog.sql
+```
+
 Setup D1:
 
-```
+```txt
 yarn wrangler d1 create sonik-blog
-yarn wrangler d1 execute sonik-blog --local --file=./blog.sql
+yarn wrangler d1 execute sonik-blog --file=./blog.sql
 ```
 
 Edit `wrangler.toml`:
 
-```
+```txt
 cp wrangler.sample.toml wrangler.toml
 code wrangler.toml
 ```
 
-Run proxy for Cloudflare Bindings:
-
-```
-yarn proxy
-```
-
 Dev:
 
-```
+```txt
 yarn dev
 ```
 
 Build:
 
-```
+```txt
 yarn build
 ```
 
 Deploy:
 
-```
+```txt
 yarn deploy
 ```
 

@@ -6,7 +6,6 @@
   "scripts": {
     "build": "vite build && vite build --mode client",
     "dev": "vite",
-    "proxy": "cf-bindings-proxy --d1 sonik-blog",
     "deploy": "wrangler pages deploy ./dist"
   },
   "dependencies": {
