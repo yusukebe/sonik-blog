@@ -10,22 +10,23 @@
     "deploy": "wrangler pages deploy ./dist"
   },
   "dependencies": {
-    "@hono/zod-validator": "^0.1.5",
+    "@hono/zod-validator": "^0.1.8",
     "@markdoc/markdoc": "^0.3.0",
+    "@sonikjs/preact": "^0.0.10",
     "dayjs": "^1.11.9",
-    "hono": "^3.3.4",
-    "preact": "^10.16.0",
-    "preact-render-to-string": "^6.2.0",
-    "sonik": "^0.0.45",
+    "hono": "^3.7.0",
+    "preact": "^10.17.1",
+    "sonik": "^0.0.80",
     "zod": "^3.21.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230518.0",
+    "@sonikjs/cloudflare-pages": "^0.0.1",
+    "@types/node": "^20.6.3",
     "autoprefixer": "^10.4.14",
-    "cf-bindings-proxy": "^0.2.6",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.6",
+    "vite": "^4.4.9",
     "wrangler": "^3.4.0"
   }
 }

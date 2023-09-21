@@ -1,4 +1,5 @@
-import { Route } from '../../types'
+import type { Context } from '../../types'
+import { defineRoute } from 'sonik'
 import { z } from 'zod'
 import { zValidator } from '@hono/zod-validator'
 import { createArticle } from '../../db'
@@ -56,39 +57,38 @@ const Page = (data?: Data) => {
   )
 }
 
-export default {
-  GET: (_, { head }) => {
-    head.set(headValue)
-    return Page()
-  },
-  APP: (app, { render, head }) => {
-    const schema = z.object({
-      title: z.string().min(1),
-      content: z.string().min(1)
-    })
-    app.post(
-      '/create',
-      zValidator('form', schema, (res) => {
-        if (!res.success) {
-          const { title, content } = res.data
-          head.set(headValue)
-          return render(
-            Page({
-              error: res.error.flatten().fieldErrors,
-              title,
-              content
-            })
-          )
-        }
-      }),
-      async (c) => {
-        const { title, content } = c.req.valid('form')
-        await createArticle(c.get('DB'), {
-          title,
-          content
-        })
-        return c.redirect('/', 303)
+export const route = defineRoute((app) => {
+  app.get((c) => {
+    return c.render(<Page />, headValue)
+  })
+
+  const schema = z.object({
+    title: z.string().min(1),
+    content: z.string().min(1)
+  })
+
+  app.post(
+    '/create',
+    zValidator('form', schema, (res, c: Context) => {
+      if (!res.success) {
+        const { title, content } = res.data
+        return c.render(
+          Page({
+            error: res.error.flatten().fieldErrors,
+            title,
+            content
+          }),
+          headValue
+        )
       }
-    )
-  }
-} satisfies Route
+    }),
+    async (c) => {
+      const { title, content } = c.req.valid('form')
+      await createArticle(c.env.DB, {
+        title,
+        content
+      })
+      return c.redirect('/', 303)
+    }
+  )
+})

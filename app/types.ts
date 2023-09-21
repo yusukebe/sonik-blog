@@ -1,4 +1,4 @@
-import { Route as BaseRoute } from 'sonik/preact'
+import { Context as BaseContext } from 'sonik'
 
 export type Env = {
   Bindings: {
@@ -9,4 +9,4 @@ export type Env = {
   }
 }
 
-export type Route = BaseRoute<Env>
+export type Context = BaseContext<Env>

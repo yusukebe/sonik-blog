@@ -1,6 +1,6 @@
-import type { Handler } from 'sonik/preact'
+import type { ErrorHandler } from '@sonikjs/preact'
 
-const handler: Handler = () => {
+const handler: ErrorHandler = () => {
   return <p>Error!</p>
 }
 

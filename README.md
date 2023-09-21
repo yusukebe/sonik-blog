@@ -28,7 +28,7 @@ https://github.com/yusukebe/sonik-blog/assets/10682/73fd1303-b26a-45b9-8ea8-bc89
 Setup D1:
 
 ```
-yarn wrangler d1 create sonik-blog --experimental-backend
+yarn wrangler d1 create sonik-blog
 yarn wrangler d1 execute sonik-blog --local --file=./blog.sql
 ```
 
