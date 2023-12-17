@@ -1,7 +1,13 @@
-import { createApp } from '@sonikjs/preact'
+import { createApp } from 'sonik'
+import { Hono } from 'hono'
+import { showRoutes } from 'hono/dev'
 
-const app = createApp()
+const base = new Hono()
 
-app.showRoutes()
+const app = createApp({
+  app: base
+})
+
+showRoutes(app)
 
 export default app

@@ -1,7 +1,7 @@
-import type { NotFoundHandler } from '@sonikjs/preact'
+import type { NotFoundHandler } from 'hono'
 
-const handler: NotFoundHandler = () => {
-  return <p>Not Found</p>
+const handler: NotFoundHandler = (c) => {
+  return c.render(<p>Not Found</p>)
 }
 
 export default handler

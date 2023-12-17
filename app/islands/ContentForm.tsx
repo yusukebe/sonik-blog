@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useState } from 'react'
 import { parseMarkdown } from '../utils'
 
 interface Props {
@@ -9,23 +9,23 @@ export default function ContentForm({ initialValue = '' }: Props) {
   const [value, setValue] = useState(initialValue)
   const [preview, setPreview] = useState(false)
 
-  const handleChange = (e: Event) => {
-    const target = e.target as HTMLTextAreaElement
+  const handleChange = (e: any) => {
+    const target = e.target
     setValue(target.value)
   }
 
   return (
     <div>
-      <div class="flex justify-between">
-        <label class="text-gray-500 text-sm" htmlFor="content">
+      <div className="flex justify-between">
+        <label className="text-gray-500 text-sm" htmlFor="content">
           Content
         </label>
-        <label class="text-gray-500 text-sm">
+        <label className="text-gray-500 text-sm">
           Preview
           <input
             type="checkbox"
             id="preview"
-            class="ml-2"
+            className="ml-2"
             checked={preview}
             onChange={() => setPreview((prev) => !prev)}
           />
@@ -45,7 +45,7 @@ export default function ContentForm({ initialValue = '' }: Props) {
         <textarea
           id="content"
           rows={10}
-          class="w-full p-2 border border-gray-300 rounded-md"
+          className="w-full p-2 border border-gray-300 rounded-md"
           name="content"
           value={value}
           onChange={handleChange}

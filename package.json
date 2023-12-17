@@ -9,23 +9,26 @@
     "deploy": "wrangler pages deploy ./dist"
   },
   "dependencies": {
-    "@hono/zod-validator": "^0.1.8",
-    "@markdoc/markdoc": "^0.3.0",
-    "@sonikjs/preact": "^0.0.10",
-    "dayjs": "^1.11.9",
-    "hono": "^3.7.0",
-    "preact": "^10.17.1",
-    "sonik": "^0.0.80",
-    "zod": "^3.21.4"
+    "@hono/react-renderer": "^0.0.2",
+    "@hono/zod-validator": "^0.1.11",
+    "@markdoc/markdoc": "^0.4.0",
+    "dayjs": "^1.11.10",
+    "hono": "^3.11.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sonik": "^0.0.0-x-0.0.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230518.0",
-    "@sonikjs/cloudflare-pages": "^0.0.1",
-    "@types/node": "^20.6.3",
-    "autoprefixer": "^10.4.14",
+    "@cloudflare/workers-types": "^4.20231121.0",
+    "@hono/vite-cloudflare-pages": "^0.1.2",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
     "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.3",
-    "vite": "^4.4.9",
-    "wrangler": "^3.4.0"
+    "tailwindcss": "^3.3.6",
+    "vite": "^5.0.10",
+    "wrangler": "^3.21.0"
   }
 }

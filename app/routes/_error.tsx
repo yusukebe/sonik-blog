@@ -1,7 +1,7 @@
-import type { ErrorHandler } from '@sonikjs/preact'
+import type { ErrorHandler } from 'hono'
 
-const handler: ErrorHandler = () => {
-  return <p>Error!</p>
+const handler: ErrorHandler = (e, c) => {
+  return c.render(<p>Error: {e.message}!</p>)
 }
 
 export default handler

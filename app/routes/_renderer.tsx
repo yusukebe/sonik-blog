@@ -1,13 +1,13 @@
-import type { LayoutHandler } from '@sonikjs/preact'
+import { reactRenderer } from '@hono/react-renderer'
 
-const handler: LayoutHandler = ({ children, head }) => {
+export default reactRenderer(({ children, title, link }) => {
   return (
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {import.meta.env.PROD ? (
           <>
-            <link href="/static/style.css" rel="stylesheet" />
+            <link href="/static/assets/style.css" rel="stylesheet" />
             <script type="module" src="/static/client.js"></script>
           </>
         ) : (
@@ -16,13 +16,18 @@ const handler: LayoutHandler = ({ children, head }) => {
             <script type="module" src="/app/client.ts"></script>
           </>
         )}
-        {head.createTags()}
+        <title>{title}</title>
+        {link ? (
+          link.map((link) => {
+            return <link href={link.href} ref={link.rel} />
+          })
+        ) : (
+          <></>
+        )}
       </head>
       <body>
-        <div class="bg-gray-200 h-screen">{children}</div>
+        <div className="bg-gray-200 h-screen">{children}</div>
       </body>
     </html>
   )
-}
-
-export default handler
+})
