@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "dev:wrangler": "wrangler pages dev ./dist",
     "build": "vite build && vite build --mode client",
     "deploy": "$npm_execpath build && wrangler pages deploy ./dist"
   },
@@ -16,12 +17,13 @@
     "hono": "^3.11.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sonik": "^0.0.0-x-0.0.1",
+    "sonik": "^0.0.0-x-0.0.2",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231121.0",
     "@hono/vite-cloudflare-pages": "^0.1.2",
+    "@hono/vite-dev-server": "^0.3.1",
     "@types/node": "^20.10.4",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",

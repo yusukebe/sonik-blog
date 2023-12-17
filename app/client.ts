@@ -1,8 +1,12 @@
-import { createElement } from 'react'
-import { hydrateRoot } from 'react-dom/client'
 import { createClient } from 'sonik/client'
 
 createClient({
-  hydrate: (elem, root) => hydrateRoot(root, elem),
-  createElement
+  hydrate: async (elem, root) => {
+    const { hydrateRoot } = await import('react-dom/client')
+    return hydrateRoot(root, elem)
+  },
+  createElement: async (type: any, props: any, ...children: any[]) => {
+    const { createElement } = await import('react')
+    return createElement(type, props, ...children)
+  }
 })

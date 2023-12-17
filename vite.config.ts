@@ -8,11 +8,11 @@ export default defineConfig(({ mode }) => {
     return {
       build: {
         rollupOptions: {
-          input: ['./app/client.ts', '/app/style.css'],
+          input: ['/app/client.ts', '/app/style.css'],
           output: {
-            dir: './dist/static',
-            entryFileNames: 'client.js',
-            assetFileNames: `assets/[name].[ext]`
+            entryFileNames: 'static/client.js',
+            chunkFileNames: 'static/assets/[name]-[hash].js',
+            assetFileNames: `static/assets/[name].[ext]`
           }
         },
         emptyOutDir: false,
