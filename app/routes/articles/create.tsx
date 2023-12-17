@@ -15,7 +15,7 @@ const headValue = {
   link: [
     {
       rel: 'stylesheet',
-      href: '/static/article.css'
+      href: '/static/assets/article.css'
     }
   ]
 }

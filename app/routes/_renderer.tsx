@@ -18,8 +18,8 @@ export default reactRenderer(({ children, title, link }) => {
         )}
         <title>{title}</title>
         {link ? (
-          link.map((link) => {
-            return <link href={link.href} ref={link.rel} />
+          link.map((link, n) => {
+            return <link id={n.toString()} href={link.href} rel={link.rel} />
           })
         ) : (
           <></>

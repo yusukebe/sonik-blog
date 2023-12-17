@@ -4,9 +4,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "vite build && vite build --mode client",
     "dev": "vite",
-    "deploy": "wrangler pages deploy ./dist"
+    "build": "vite build && vite build --mode client",
+    "deploy": "$npm_execpath build && wrangler pages deploy ./dist"
   },
   "dependencies": {
     "@hono/react-renderer": "^0.0.2",

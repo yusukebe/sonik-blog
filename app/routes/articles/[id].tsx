@@ -34,7 +34,7 @@ export default createHandlers(async (c) => {
       link: [
         {
           rel: 'stylesheet',
-          href: '/static/article.css'
+          href: '/static/assets/article.css'
         }
       ]
     }
