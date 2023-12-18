@@ -1,4 +1,3 @@
-import pages from '@hono/vite-cloudflare-pages'
 import sonik from 'sonik/vite'
 import { defineConfig } from 'vite'
 import { getEnv } from '@hono/vite-dev-server/cloudflare-pages'
@@ -29,13 +28,15 @@ export default defineConfig(({ mode }) => {
               d1Persist: true
             })
           }
-        }),
-        pages({
-          entry: './app/server.ts'
         })
       ],
+      ssr: {
+        external: ['react', 'react-dom'],
+        noExternal: true
+      },
       build: {
         rollupOptions: {
+          input: './app/server.ts',
           output: {
             dir: './dist',
             entryFileNames: '_worker.js'
